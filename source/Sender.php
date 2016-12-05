@@ -341,6 +341,15 @@ class Sender
             ]
         ];
     }
+
+    /**
+     * @param Receitp $receipt
+     * @return array
+     */
+    public function getControlCodesFormatted(Receipt $receipt){
+        $codes = $this->getControlCodes($receipt);
+        return ['pkp' => $codes['pkp']['_'], 'bkp' => $codes['bkp']['_']];
+    }
     
     /**
      * Calculate BKB.
